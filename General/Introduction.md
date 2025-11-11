@@ -1,4 +1,3 @@
-# pimcore-rest-api-docs
 
 Pimcore Rest Api Documentation
 =======
@@ -10,6 +9,5 @@ Introduction
 Getting started
 ---------------
 
-[Authentication](./General/Authentication.md)
-
+[Authentication](Authentication.md)
 
