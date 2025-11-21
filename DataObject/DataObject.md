@@ -313,8 +313,8 @@ Data Object Operations
 | Relation        | [ManyToOneRelation](Attributes/ManyToOneRelation.md)               |
 | Relation        | [ManyToManyRelation](Attributes/ManyToManyRelation.md)             |
 | Relation        | [ManyToManyObjectRelation](Attributes/ManyToManyObjectRelation.md) |
-| Relation        | [AdvancedManyToManyRelation]()                                     |
-| Relation        | [AdvancedManyToManyObjectRelation]()                               |
+| Relation        | [AdvancedManyToManyRelation](Attributes/AdvancedManyToManyRelation.md)                                     |
+| Relation        | [AdvancedManyToManyObjectRelation](Attributes/AdvancedManyToManyObjectRelation.md)                               |
 |                 |                                                                    |
 
 
