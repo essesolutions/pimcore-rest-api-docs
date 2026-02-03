@@ -1,11 +1,11 @@
 
 `Version 2024.4.9.0`
 
-Date Range Configuration
+Time Configuration
 -----
 
 ## Input Parameters
- Parameters given in input while defining a data range attribute of an object. <br>
+ Parameters given in input while defining a time attribute of an object. <br>
 
 Required parameter <span style="color: red;">&#9733;</span>
 <table style="width: 100%">
@@ -20,14 +20,9 @@ Required parameter <span style="color: red;">&#9733;</span>
             <td>string</td>
         </tr>
         <tr>
-            <td> start date<span style="color: red;">&#9733;</span></td>
-            <td>The start date of the range </td>
-            <td>date in format 'Y-m-d'</td>
-        </tr>
-        <tr>
-            <td> end date<span style="color: red;">&#9733;</span></td>
-            <td>The end date of the range</td>
-            <td>date in format 'Y-m-d'</td>
+            <td> value</td>
+            <td>The time to be stored </td>
+            <td>time in format 'HH:mm:ss'</td>
         </tr>
         <tr>
             <td> Properties </td>
@@ -57,7 +52,7 @@ Required parameter <span style="color: red;">&#9733;</span>
 ----------
 #
 ## Output Parameters
-Parameters received in output while retrieving a data range attribute of an object. <br>
+Parameters received in output while retrieving a time attribute of an object. <br>
 
 Required parameter <span style="color: red;">&#9733;</span>
 <table style="width: 100%">
@@ -68,7 +63,7 @@ Required parameter <span style="color: red;">&#9733;</span>
         </tr>
         <tr>
             <td>name <span style="color: red;">&#9733;</span></td>
-            <td>Name of the attrbute</td>
+            <td>Name of the attribute</td>
             <td>string</td>
         </tr>
          <tr>
@@ -77,14 +72,9 @@ Required parameter <span style="color: red;">&#9733;</span>
             <td>string</td>
         </tr>
         <tr>
-            <td> start date<span style="color: red;">&#9733;</span></td>
-            <td>The start date of the range </td>
-            <td>date in format 'Y-m-d'</td>
-        </tr>
-        <tr>
-            <td> end date<span style="color: red;">&#9733;</span></td>
-            <td>The end date of the range</td>
-            <td>date in format 'Y-m-d'</td>
+            <td> value</td>
+            <td>The stored time value</td>
+            <td>time in format 'HH:mm:ss'</td>
         </tr>
         <tr>
             <td> Properties </td>

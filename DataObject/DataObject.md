@@ -1,6 +1,6 @@
 [Asset metadata](../Asset/AssetMetadata.md)
 
-`Version 2024.4.4.1`
+`Version 2024.4.9.0`
 
 Data Object Operations
 -------
@@ -297,27 +297,34 @@ Data Object Operations
 ### Attribute type configuration: <br>
 
 
-| Attribute Group | Attribute Type                                                     |
-|-----------------|--------------------------------------------------------------------|
-| Text            | [Textarea](Attributes/Textarea.md)                                 |
-| Text            | [Input](Attributes/Input.md)                                       |
-| Text            | [WYSIWYG](Attributes/WYSIWYG.md)                                   |
-| Text            | [Password](Attributes/Password.md)                                 |
-| Text            | [InputQuantityValue](Attributes/InputQuantity.md)                  |
-| Date            | [DateRange](Attributes/DateRange.md)                               |
-| Date            | [DateTime](Attributes/DateTime.md)                                 |
-| Number          | [Numeric](Attributes/Numeric.md)                                   |
-| Structured      | [ObjectBrick](Attributes/ObjectBrick.md)                           |
-| Structured      | [LocalizedFields](Attributes/LocalizedField.md)                    |
-| Structured      | [FieldCollection](Attributes/FieldCollection.md)                   |
-| Relation        | [ManyToOneRelation](Attributes/ManyToOneRelation.md)               |
-| Relation        | [ManyToManyRelation](Attributes/ManyToManyRelation.md)             |
-| Relation        | [ManyToManyObjectRelation](Attributes/ManyToManyObjectRelation.md) |
-| Relation        | [AdvancedManyToManyRelation](Attributes/AdvancedManyToManyRelation.md)                                     |
-| Relation        | [AdvancedManyToManyObjectRelation](Attributes/AdvancedManyToManyObjectRelation.md)                               |
-|                 |                                                                    |
-
-
+| Attribute Group | Attribute Type                                                                    |
+|-----------------|-----------------------------------------------------------------------------------|
+| Text            | [Textarea](Attributes/Textarea.md)                                                |
+| Text            | [Input](Attributes/Input.md)                                                      |
+| Text            | [WYSIWYG](Attributes/WYSIWYG.md)                                                  |
+| Text            | [Password](Attributes/Password.md)                                                |
+| Text            | [InputQuantityValue](Attributes/InputQuantity.md)                                 |
+| Date            | [Date](Attributes/Date.md)                                                        |
+| Date            | [Time](Attributes/Time.md)                                                        |
+| Date            | [DateRange](Attributes/DateRange.md)                                              |
+| Date            | [DateTime](Attributes/DateTime.md)                                                |
+| Number          | [Numeric](Attributes/Numeric.md)                                                  |
+| Structured      | [ObjectBrick](Attributes/ObjectBrick.md)                                          |
+| Structured      | [LocalizedFields](Attributes/LocalizedField.md)                                   |
+| Structured      | [FieldCollection](Attributes/FieldCollection.md)                                  |
+| Structured      | [ClassificationStore](Attributes/CertificationStore.md)                           |
+| Relation        | [ManyToOneRelation](Attributes/ManyToOneRelation.md)                              |
+| Relation        | [ManyToManyRelation](Attributes/ManyToManyRelation.md)                            |
+| Relation        | [ManyToManyObjectRelation](Attributes/ManyToManyObjectRelation.md)                |
+| Relation        | [AdvancedManyToManyRelation](Attributes/AdvancedManyToManyRelation.md)            |
+| Relation        | [AdvancedManyToManyObjectRelation](Attributes/AdvancedManyToManyObjectRelation.md) |
+| Other           | [CalculatedValue](Attributes/CalculatedValue.md)                                  |
+| Other           | [Checkbox](Attributes/CheckBox.md)                                                |
+| Media           | [Image](Attributes/Image.md)                                                      |
+| Media           | [ImageGallery](Attributes/ImageGallery.md)                                        |
+| Media           | [Video](Attributes/Video.md)                                                      |
+| Media           | [HotspotImage](Attributes/HotspotImage.md)                                        |
+| Select          | [Select](Attributes/Select.md)                                                    |
 
 #
 # POST

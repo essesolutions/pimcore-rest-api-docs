@@ -2,7 +2,7 @@
 
 Pimcore Rest Api Documentation
 =======
-`Version 2024.4.4.1`                 `OAS 3.1`
+`Version 2024.4.9.0`                 `OAS 3.1`
 
 Introduction
 -----------

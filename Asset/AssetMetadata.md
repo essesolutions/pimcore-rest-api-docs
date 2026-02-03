@@ -1,17 +1,18 @@
 [Asset](Asset.md)
 
-`Version 2024.4.4.1`
+`Version 2024.4.9.0`
 
 Asset Metadata Operations
 -------
 # GET
-## /oktoplus/rest/v1/assets/{assetId}/metadata
-### Retrieving the collection of all asset metadata
+## Retrieving the collection of all asset metadata
+## /oktoplus/rest/v1/asset/metadata/{assetId}
+
 <div style="display: flex; justify-content: space-between; align-items: flex-start;">
 
   <div style="flex: 1; margin-right: 20px;">
     <h3> Description</h3>
-    <p>This endpoint retrieves a list of all asset metadata resources in the system. It requires the asset metadata identifier as parameter in the path. The response will contain a list of asset metadata resources in JSON format.</p>
+    <p>This endpoint retrieves a list of all asset metadata resources in the system. It requires the asset metadata's identifier as parameter in the path. The response will contain a list of asset metadata resources in JSON format.</p>
   </div>
 
   <div style="flex: 1; border-left: 2px solid #ddd; padding-left: 20px;">
@@ -23,7 +24,7 @@ Asset Metadata Operations
     "name": "string",
     "language": "string",
     "type": "input",  
-    "value": "string"
+    "value": "2026-02-02T10:34:27.595Z"
   }
 ]
 </code></pre>
@@ -31,16 +32,13 @@ Asset Metadata Operations
 
 </div>
 
-
-## Retrieving an Asset Metadata resource
-## /oktoplus/rest/v1/assets/{assetId}/metadata/language/{language}
-### Using the 'Language' parameter
+## /oktoplus/rest/v1/asset/metadata/language/{language}/{assetId}
 
 <div style="display: flex; justify-content: space-between; align-items: flex-start;">
 
   <div style="flex: 1; margin-right: 20px;">
     <h3> Description</h3>
-    <p>This endpoint retrieves a list of all asset metadata resources in the system. It requires that the asset metadata identifier and the language should be passed as parameters in the path. The response will contain  the asset metadata resource in JSON format.</p>
+    <p>This endpoint retrieves a list of all asset metadata resources in the system. It requires that the asset metadata's identifier and the language should be passed as parameters in the path. The response will contain  the asset metadata resource in JSON format.</p>
   </div>
 
   <div style="flex: 1; border-left: 2px solid #ddd; padding-left: 20px;">
@@ -59,16 +57,79 @@ Asset Metadata Operations
 
 </div>
 
+## /oktoplus/rest/v1/asset/metadata/language/{language}/path/{path}
 
-## /oktoplus/rest/v1/assets/{assetId}/metadata/{name}
-### Retrieving one asset resource
-### Using the 'name' parameter
+<div style="display: flex; justify-content: space-between; align-items: flex-start;">
+
+  <div style="flex: 1; margin-right: 20px;">
+    <h3> Description</h3>
+    <p>This endpoint retrieves a list of all asset metadata resources in the system. It requires that the asset metadata's language and path should be passed as parameters. The response will contain  the asset metadata resource in JSON format.</p>
+  </div>
+
+  <div style="flex: 1; border-left: 2px solid #ddd; padding-left: 20px;">
+    <h3>Response</h3>
+    <h4>200 :OK</h4>
+    <pre><code>[
+  {
+    "assetId": 0,
+    "name": "string",
+    "language": "string",
+    "type": "input",
+    "value": "string"
+  }
+]</code></pre>
+  </div>
+
+</div>
+
+#
+
+## Retrieving an asset metadata resource
+## /oktoplus/rest/v1/asset/metadata/name/{name}/{assetId}
 
 <div style="display: flex; justify-content: space-between; align-items: flex-start;">
 
   <div style="flex: 1; margin-right: 20px;">
     <h3> Description</h3>
     <p>This endpoint retrieves an asset metadata resource in the system. It requires the asset metadata's identifier and the name should be passed as parameters in the path. The response will contain the asset metadata resource in JSON format.</p>
+  </div>
+
+  <div style="flex: 1; border-left: 2px solid #ddd; padding-left: 20px;">
+    <h3>Response</h3>
+    <h4>200 :OK</h4>
+    <pre><code>{
+  "assetId": 0,
+  "name": "string",
+  "language": "string",
+  "type": "input",
+  "value": "2026-02-02T10:48:22.436Z"
+}</code></pre>
+
+<h4>404: Not found </h4>
+<pre><code>
+{
+  "@context": "string",
+  "@id": "string",
+  "@type": "string",
+  "title": "string",
+  "detail": "string",
+  "status": 404,
+  "instance": "string",
+  "type": "string",
+  "description": "string"
+}
+</code></pre>
+  </div>
+
+</div>
+
+## /oktoplus/rest/v1/asset/metadata/name/{name}/language/{language}/{assetId}
+
+<div style="display: flex; justify-content: space-between; align-items: flex-start;">
+
+  <div style="flex: 1; margin-right: 20px;">
+    <h3> Description</h3>
+    <p>This endpoint retrieves an asset metadata resources in the system. It requires the asset metadata's identifier, name and language  should be passed as parameters in the path. The response will contain a list of asset metadata resources in JSON format.</p>
   </div>
 
   <div style="flex: 1; border-left: 2px solid #ddd; padding-left: 20px;">
@@ -100,14 +161,75 @@ Asset Metadata Operations
 
 </div>
 
-## /oktoplus/rest/v1/assets/{assetId}/metadata/{name}/language/{language}
-### Using the 'name' and 'language' parameters
+## /oktoplus/rest/v1/asset/metadata/path/{path}
+<div style="display: flex; justify-content: space-between; align-items: flex-start;">
+
+  <div style="flex: 1; margin-right: 20px;">
+    <h3> Description</h3>
+    <p>This endpoint retrieves an asset metadata resource in the system. It requires that the path of the asset metadata should be passed as parameter. The response will contain the asset metadata resource in JSON format.</p>
+  </div>
+
+  <div style="flex: 1; border-left: 2px solid #ddd; padding-left: 20px;">
+    <h3>Response</h3>
+    <h4>200 :OK</h4>
+    <pre><code>{
+  "assetId": 0,
+  "name": "string",
+  "language": "string",
+  "type": "input",
+  "value": "2026-02-02T10:48:22.436Z"
+}</code></pre>
+
+  </div>
+
+</div>
+
+## /oktoplus/rest/v1/asset/metadata/name/{name}/path/{path}
 
 <div style="display: flex; justify-content: space-between; align-items: flex-start;">
 
   <div style="flex: 1; margin-right: 20px;">
     <h3> Description</h3>
-    <p>This endpoint retrieves an asset metadata resources in the system. It requires the asset metadata's identifier, name and language  should be passed as parameters in the path. The response will contain a list of asset metadata resources in JSON format.</p>
+    <p>This endpoint retrieves an asset metadata resources in the system. It requires the asset metadata's name and path should be passed as parameters. The response will contain a list of asset metadata resources in JSON format.</p>
+  </div>
+
+  <div style="flex: 1; border-left: 2px solid #ddd; padding-left: 20px;">
+    <h3>Response</h3>
+    <h4>200 :OK</h4>
+    <pre><code>{
+  "assetId": 0,
+  "name": "string",
+  "language": "string",
+  "type": "input",
+  "value": "string"
+}</code></pre>
+
+<h4>404: Not found </h4>
+<pre><code>
+{
+  "@context": "string",
+  "@id": "string",
+  "@type": "string",
+  "title": "string",
+  "detail": "string",
+  "status": 404,
+  "instance": "string",
+  "type": "string",
+  "description": "string"
+}
+</code></pre>
+  </div>
+
+</div>
+
+
+## /oktoplus/rest/v1/asset/metadata/name/{name}/language/{language}/path/{path}
+
+<div style="display: flex; justify-content: space-between; align-items: flex-start;">
+
+  <div style="flex: 1; margin-right: 20px;">
+    <h3> Description</h3>
+    <p>This endpoint retrieves an asset metadata resources in the system. It requires the asset metadata's name, language and path should be passed as parameters. The response will contain a list of asset metadata resources in JSON format.</p>
   </div>
 
   <div style="flex: 1; border-left: 2px solid #ddd; padding-left: 20px;">
@@ -186,8 +308,31 @@ Required parameter <span style="color: red;">&#9733;</span>
 #
 
 # POST
-## /oktoplus/rest/v1/assets/{assetId}
-### Creating an asset metadata resource
+## Creating an asset metadata resource
+## /oktoplus/rest/v1/asset/metadata/{assetId}
+
+
+<table style="width: 100%; border: none; border-collapse: collapse;">
+  <tr>
+    <td style="width: 50%; vertical-align: top; padding-right: 20px; padding-left: 10px;">
+      <h3> Request Body</h3>
+      <pre><code>{
+  "name": "string",
+  "language": "string",
+  "type": "input",
+  "value": "string"
+}</code></pre>
+    </td>
+    <td style="width: 50%; vertical-align: top; padding-left: 20px;">
+      <h3>Request Description</h3>
+      <p>This endpoint created a new asset metadata into the system. It requires that the parameters of the new object should be specified in the request body and in their correct format . The response will contain the created asset data in JSON format.</p>
+    </td>
+  </tr>
+</table>
+
+
+## /oktoplus/rest/v1/asset/metadata/path/{path}
+### Using the path
 
 <table style="width: 100%; border: none; border-collapse: collapse;">
   <tr>
@@ -298,14 +443,36 @@ Required parameter <span style="color: red;">&#9733;</span>
 # PUT
 
 ### Replacing a given asset
-## /oktoplus/rest/v1/assets/{assetId}/metadata/{name}
-###  Using the 'name' parameter
+## /oktoplus/rest/v1/asset/metadata/name/{name}/language/{language}/{assetId}
 
 <table style="width: 100%; border: none; border-collapse: collapse;">
   <tr>
     <td style="width: 50%; vertical-align: top; padding-right: 20px; padding-left: 10px;">
       <h3> Request Body</h3>
       <pre><code>{
+  "name": "string",
+  "language": "string",
+  "type": "input",
+  "value": "string"
+}</code></pre>
+    </td>
+    <td style="width: 50%; vertical-align: top; padding-left: 20px;">
+      <h3>Request Description</h3>
+      <p>This endpoint replaces a given asset metadata resource with another one. It requires that the parameters of the updated object including the identifier, the name and the language should be specified in the request body and in their correct format . The response will contain the updated asset metadata in JSON format.</p>
+    </td>
+  </tr>
+</table>
+
+#
+
+## /oktoplus/rest/v1/asset/metadata/name/{name}/{assetId}
+
+
+<table style="width: 100%; border: none; border-collapse: collapse;">
+  <tr>
+    <td style="width: 50%; vertical-align: top; padding-right: 20px; padding-left: 10px;">
+      <h3> Request Body</h3>
+      <pre><code>{{
   "name": "string",
   "language": "string",
   "type": "input",
@@ -321,78 +488,8 @@ Required parameter <span style="color: red;">&#9733;</span>
 
 #
 
-## Request Parameters
-The parameters sent in a put request are the same as in the post request
-## Responses 
+## /oktoplus/rest/v1/asset/metadata/name/{name}/language/{language}/path/{path}
 
--------
-<h4>200:Asset Metadata resource updated </h4>
-<pre><code>
- {
-  "assetId": 0,
-  "name": "string",
-  "language": "string",
-  "type": "input",
-  "value": "string"
-}
-</code></pre>
-
-<h4>400: Invalid input </h4>
-<pre><code>
- {
-  "@context": "string",
-  "@id": "string",
-  "@type": "string",
-  "title": "string",
-  "detail": "string",
-  "status": 404,
-  "instance": "string",
-  "type": "string",
-  "description": "string"
-}
-</code></pre>
-
-<h4>404: Not found </h4>
-<pre><code>
-{
-  "@context": "string",
-  "@id": "string",
-  "@type": "string",
-  "title": "string",
-  "detail": "string",
-  "status": 404,
-  "instance": "string",
-  "type": "string",
-  "description": "string"
-}
-</code></pre>
-
-<h4>422: An error occurred </h4>
-<pre><code>
- {
-  "@context": "string",
-  "@id": "string",
-  "@type": "string",
-  "status": 422,
-  "violations": [
-    {
-      "propertyPath": "string",
-      "message": "string"
-    }
-  ],
-  "detail": "string",
-  "description": "string",
-  "type": "string",
-  "title": "string",
-  "instance": "string"
-}
-</code></pre>
-
--------------------
-#
-
-## /oktoplus/rest/v1/assets/{assetId}/metadata/{name}/language/{language}
-### Using the 'language' and 'name' parameters
 
 <table style="width: 100%; border: none; border-collapse: collapse;">
   <tr>
@@ -407,11 +504,38 @@ The parameters sent in a put request are the same as in the post request
     </td>
     <td style="width: 50%; vertical-align: top; padding-left: 20px;">
       <h3>Request Description</h3>
-      <p>This endpoint replaces a given asset metadata resource with another one. It requires that the parameters of the updated object including the identifier, the name and the language should be specified in the request body and in their correct format . The response will contain the updated asset metadata in JSON format.</p>
+      <p>This endpoint replaces a given asset metadata resource with another one. It requires that the parameters of the updated object including the path, name and language should be specified in the request body and in their correct format . The response will contain the updated asset metadata in JSON format.</p>
     </td>
   </tr>
 </table>
 
+#
+
+## /oktoplus/rest/v1/asset/metadata/name/{name}/path/{path}
+
+
+<table style="width: 100%; border: none; border-collapse: collapse;">
+  <tr>
+    <td style="width: 50%; vertical-align: top; padding-right: 20px; padding-left: 10px;">
+      <h3> Request Body</h3>
+      <pre><code>{{
+  "name": "string",
+  "language": "string",
+  "type": "input",
+  "value": "string"
+}</code></pre>
+    </td>
+    <td style="width: 50%; vertical-align: top; padding-left: 20px;">
+      <h3>Request Description</h3>
+      <p>This endpoint replaces a given asset metadata resource with another one. It requires that the parameters of the updated object including the identifier and name should be specified in the request body and in their correct format . The response will contain the updated asset metadata in JSON format.</p>
+    </td>
+  </tr>
+</table>
+
+#
+
+## Request Parameters
+The parameters sent in a put request are the same as in the post request
 #
 
 ### Responses
@@ -482,10 +606,12 @@ The parameters sent in a put request are the same as in the post request
 
 #
 
+
+
 # DELETE
 ## Removing an asset metadata
-## /oktoplus/rest/v1/assets/{assetId}/metadata/{name}
-### Using the 'name' parameter
+## /oktoplus/rest/v1/asset/metadata/name/{name}/{assetId}
+
 
 <div style="display: flex; justify-content: space-between; align-items: flex-start;">
 
@@ -512,14 +638,71 @@ The parameters sent in a put request are the same as in the post request
 
 </div>
 
-## /oktoplus/rest/v1/assets/{assetId}/metadata/{name}/language/{language}
-### Using the 'name' and 'language' parameters
+## /oktoplus/rest/v1/asset/metadata/name/{name}/language/{language}/{assetId}
 
 <div style="display: flex; justify-content: space-between; align-items: flex-start;">
 
   <div style="flex: 1; margin-right: 20px;">
     <h3> Description</h3>
     <p>This endpoint removes a given asset in the system. It requires that the identifier, the name and the language of the asset metadata should be passed as parameters in the path.</p>
+  </div>
+
+  <div style="flex: 1; border-left: 2px solid #ddd; padding-left: 20px;">
+    <h3>Response</h3>
+     <h4>204 :Asset Metadata resource deleted</h4>
+    <h4>404 :Not found</h4>
+    <pre><code>{
+  "@context": "string",
+  "@id": "string",
+  "@type": "string",
+  "title": "string",
+  "detail": "string",
+  "status": 404,
+  "instance": "string",
+  "type": "string",
+  "description": "string"
+}</code></pre>
+  </div>
+
+</div>
+
+
+## /oktoplus/rest/v1/asset/metadata/name/{name}/language/{language}/path/{path}
+
+<div style="display: flex; justify-content: space-between; align-items: flex-start;">
+
+  <div style="flex: 1; margin-right: 20px;">
+    <h3> Description</h3>
+    <p>This endpoint removes a given asset in the system. It requires that the name, the language and the path of the asset metadata should be passed as parameters in the path.</p>
+  </div>
+
+  <div style="flex: 1; border-left: 2px solid #ddd; padding-left: 20px;">
+    <h3>Response</h3>
+     <h4>204 :Asset Metadata resource deleted</h4>
+    <h4>404 :Not found</h4>
+    <pre><code>{
+  "@context": "string",
+  "@id": "string",
+  "@type": "string",
+  "title": "string",
+  "detail": "string",
+  "status": 404,
+  "instance": "string",
+  "type": "string",
+  "description": "string"
+}</code></pre>
+  </div>
+
+</div>
+
+
+## /oktoplus/rest/v1/asset/metadata/name/{name}/path/{path}
+
+<div style="display: flex; justify-content: space-between; align-items: flex-start;">
+
+  <div style="flex: 1; margin-right: 20px;">
+    <h3> Description</h3>
+    <p>This endpoint removes a given asset in the system. It requires that the name and the path of the asset metadata should be passed as parameters in the path.</p>
   </div>
 
   <div style="flex: 1; border-left: 2px solid #ddd; padding-left: 20px;">

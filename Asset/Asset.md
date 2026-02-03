@@ -1,6 +1,6 @@
  [Authentication](../General/Authentication.md) 
  
-`Version 2024.4.4.1`
+`Version 2024.4.9.0`
 
 Asset Operations
 -------
@@ -13,7 +13,7 @@ Asset Operations
 
   <div style="flex: 1; margin-right: 20px;">
     <h3> Description</h3>
-    <p>This endpoint retrieves a list of all assets in the system.The returned collection could be filtered using parameters like the page,path,type and query. The response will contain the asset data in JSON format.</p>
+    <p>This endpoint retrieves a list of all assets in the system.The returned collection could be filtered using parameters like the page,the  number of items per page,path,type and query. The response will contain the asset data in JSON format.</p>
   </div>
 
   <div style="flex: 1; border-left: 2px solid #ddd; padding-left: 20px;">
@@ -58,6 +58,11 @@ Asset Operations
             <td>The collection page number</td>
             <td>integer(>0)</td>
         </tr>
+       <tr>
+            <td>items per page</td>
+            <td>The number of items per page</td>
+            <td>integer <br>(1000 items by default)</td>
+        </tr>
         <tr>
             <td> path</td>
             <td>The path where the collection is stored</td>
@@ -72,7 +77,7 @@ Asset Operations
        <tr>
             <td>query</td>
             <td>The PQL query(Pimcore Query Language Syntax) used to filter the returned collection </td>
-            <td>query</td>
+            <td>string</td>
         </tr>
    </table>
 
@@ -157,6 +162,63 @@ Required parameter <span style="color: red;">&#9733;</span>
         </tr>
     </table>
 
+#
+## /oktoplus/rest/v1/assets/path/{path}
+### Retrieves an asset resource
+
+<div style="display: flex; justify-content: space-between; align-items: flex-start;">
+
+  <div style="flex: 1; margin-right: 20px;">
+    <h3> Description</h3>
+    <p>This endpoint retrieves a particular asset in the system. It requires the asset path. The response will contain the asset data in JSON format.</p>
+  </div>
+  <div style="flex: 1; border-left: 2px solid #ddd; padding-left: 20px;">
+    <h3>Response</h3>
+    <h4>200 :OK</h4>
+    <pre><code>{
+  "internalId": 1,
+  "filename": "string",
+  "path": "string",
+  "fullpath": "string",
+  "mimeType": "string",
+  "type": "string",
+  "frontEndUrl": "string",
+  "creationDate": "2026-02-02T08:55:30.405Z",
+  "modificationDate": "2026-02-02T08:55:30.405Z",
+  "fileSize": 0,
+  "formattedFileSize": "string"
+}
+</code></pre>
+
+<h4>404 :Not found</h4>
+<pre><code>{
+  "@context": "string",
+  "@id": "string",
+  "@type": "string",
+  "id": "string",
+  "title": "string",
+  "detail": "string",
+  "status": 404,
+  "instance": "string",
+  "type": "string",
+  "meta": {},
+  "source": {
+    "pointer": "string",
+    "parameter": "string",
+    "header": "string"
+  },
+  "description": "string",
+  "trace": [
+    "string"
+  ]
+}
+</code></pre>
+  </div>
+
+</div>
+
+## Response Parameters
+ The parameters returned by this call are equal to those of /oktoplus/rest/v1/assets
 #
 ## /oktoplus/rest/v1/assets/{id}
 ### Retrieves an asset resource
@@ -620,7 +682,46 @@ Required parameter <span style="color: red;">&#9733;</span>
     </td>
     <td style="width: 50%; vertical-align: top; padding-left: 20px;">
       <h3>Request Description</h3>
-      <p>This endpoint replaces a given asset resource with another one. It requires that the parameters of the updated object including the identifier should be specified in the request body and in their correct format . The response will contain the updated asset data in JSON format.</p>
+      <p>This endpoint replaces a given asset resource with another one. It requires that the parameters of the object to be updated including the identifier should be specified in the request body and in their correct format . The response will contain the updated asset data in JSON format.</p>
+    </td>
+  </tr>
+</table>
+
+#
+## /oktoplus/rest/v1/assets/path/{path}
+### Replacing a given asset
+
+<table style="width: 100%; border: none; border-collapse: collapse;">
+  <tr>
+    <td style="width: 50%; vertical-align: top; padding-right: 20px; padding-left: 10px;">
+      <h3> Request Body</h3>
+      <pre><code>{
+  "filename": "string",
+  "path": "string",
+  "mimeType": "string",
+  "type": "string",
+  "content": "string",
+  "properties": [
+    {
+      "name": "string",
+      "type": "text",
+      "data": "string"
+    }
+  ],
+  "metadata": [
+    {
+      "name": "string",
+      "language": "string",
+      "type": "input",
+      "value": "string"
+    }
+  ],
+  "options": {}
+}</code></pre>
+    </td>
+    <td style="width: 50%; vertical-align: top; padding-left: 20px;">
+      <h3>Request Description</h3>
+      <p>This endpoint replaces a given asset resource with another one. It requires that the parameters of the object to be updated including its path should be specified in the request body and in their correct format . The response will contain the updated asset data in JSON format.</p>
     </td>
   </tr>
 </table>
@@ -766,6 +867,38 @@ The parameters sent in a put request are the same as in the post request
   "instance": "string",
   "type": "string",
   "description": "string"
+}
+</code></pre>
+  </div>
+
+</div>
+
+#
+## /oktoplus/rest/v1/assets/path/{path}
+### Removing an asset
+
+<div style="display: flex; justify-content: space-between; align-items: flex-start;">
+
+  <div style="flex: 1; margin-right: 20px;">
+    <h3> Description</h3>
+    <p>This endpoint removes a given asset in the system. It requires the path of the asset as  parameter.</p>
+  </div>
+
+  <div style="flex: 1; border-left: 2px solid #ddd; padding-left: 20px;">
+    <h3>Response</h3>
+    <h4>204 :Asset resource deleted</h4>
+
+<h4>404 :Not found</h4>
+<pre><code>{
+"@context": "string",
+"@id": "string",
+"@type": "string",
+"title": "string",
+"detail": "string",
+"status": 404,
+"instance": "string",
+"type": "string",
+"description": "string"
 }
 </code></pre>
   </div>

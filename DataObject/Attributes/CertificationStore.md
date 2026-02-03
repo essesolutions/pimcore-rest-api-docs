@@ -1,11 +1,11 @@
 
 `Version 2024.4.9.0`
 
-Date Range Configuration
+Classification Store Configuration
 -----
 
 ## Input Parameters
- Parameters given in input while defining a data range attribute of an object. <br>
+ Parameters given in input while defining a classification store attribute of an object.
 
 Required parameter <span style="color: red;">&#9733;</span>
 <table style="width: 100%">
@@ -15,23 +15,24 @@ Required parameter <span style="color: red;">&#9733;</span>
             <th>Value</th>
         </tr>
         <tr>
-            <td>name <span style="color: red;">&#9733;</span></td>
+            <td>name<span style="color: red;">&#9733;</span></td>
             <td>Name of the attribute</td>
             <td>string</td>
         </tr>
         <tr>
-            <td> start date<span style="color: red;">&#9733;</span></td>
-            <td>The start date of the range </td>
-            <td>date in format 'Y-m-d'</td>
+            <td> groups<span style="color: red;">&#9733;</span></td>
+            <td>A list of group IDs or names associated with the store.</td>
+            <td>array of strings/integers</td>
         </tr>
         <tr>
-            <td> end date<span style="color: red;">&#9733;</span></td>
-            <td>The end date of the range</td>
-            <td>date in format 'Y-m-d'</td>
+            <td> values</td>
+            <td>The specific keys and their assigned values within those groups.</td>
+            <td>object (Key-Value pairs)</td>
         </tr>
+        <tr>
         <tr>
             <td> Properties </td>
-            <td>A list of custom properties associated with the date range attribute. Each property contains metadata such as name,type and value. </td>
+            <td>A list of custom properties associated with the attribute. Each property contains metadata such as name,type and value. </td>
             <td>
                <table style="width: 100%; margin-top: 10px; border: 1px solid #ddd;">
                 <tr>
@@ -56,8 +57,9 @@ Required parameter <span style="color: red;">&#9733;</span>
 
 ----------
 #
+
 ## Output Parameters
-Parameters received in output while retrieving a data range attribute of an object. <br>
+Parameters given in output while retrieving a classification store attribute of an object.
 
 Required parameter <span style="color: red;">&#9733;</span>
 <table style="width: 100%">
@@ -67,28 +69,28 @@ Required parameter <span style="color: red;">&#9733;</span>
             <th>Value</th>
         </tr>
         <tr>
-            <td>name <span style="color: red;">&#9733;</span></td>
-            <td>Name of the attrbute</td>
+            <td>name<span style="color: red;">&#9733;</span></td>
+            <td>Name of the attribute</td>
             <td>string</td>
         </tr>
          <tr>
-            <td>type <span style="color: red;">&#9733;</span></td>
+            <td>type<span style="color: red;">&#9733;</span></td>
             <td>Type of the attribute</td>
             <td>string</td>
         </tr>
         <tr>
-            <td> start date<span style="color: red;">&#9733;</span></td>
-            <td>The start date of the range </td>
-            <td>date in format 'Y-m-d'</td>
+            <td>Active groups</td>
+            <td>List of groups currently active for this specific object.</td>
+            <td>array</td>
         </tr>
-        <tr>
-            <td> end date<span style="color: red;">&#9733;</span></td>
-            <td>The end date of the range</td>
-            <td>date in format 'Y-m-d'</td>
+       <tr>
+            <td>Data</td>
+            <td>The actual values stored, organized by the Key ID.</td>
+            <td>object</td>
         </tr>
         <tr>
             <td> Properties </td>
-            <td>A list of custom properties associated with the date range attribute. Each property contains metadata such as name,type and value. </td>
+            <td>A list of custom properties associated with the attribute. Each property contains metadata such as name,type and value. </td>
             <td>
                <table style="width: 100%; margin-top: 10px; border: 1px solid #ddd;">
                 <tr>
@@ -111,6 +113,6 @@ Required parameter <span style="color: red;">&#9733;</span>
         </tr>
    </table>
 
----------------
+----------
 #
 [Attribute Type Configuration](../DataObject.md#attribute-type-configuration-br)

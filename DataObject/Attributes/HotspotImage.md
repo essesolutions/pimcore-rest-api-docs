@@ -1,11 +1,11 @@
 
 `Version 2024.4.9.0`
 
-Date Range Configuration
+Hotspot Image Configuration
 -----
 
 ## Input Parameters
- Parameters given in input while defining a data range attribute of an object. <br>
+ Parameters given in input while defining a hotspot image attribute of an object. <br>
 
 Required parameter <span style="color: red;">&#9733;</span>
 <table style="width: 100%">
@@ -15,23 +15,23 @@ Required parameter <span style="color: red;">&#9733;</span>
             <th>Value</th>
         </tr>
         <tr>
-            <td>name <span style="color: red;">&#9733;</span></td>
+            <td>name<span style="color: red;">&#9733;</span></td>
             <td>Name of the attribute</td>
             <td>string</td>
         </tr>
         <tr>
-            <td> start date<span style="color: red;">&#9733;</span></td>
-            <td>The start date of the range </td>
-            <td>date in format 'Y-m-d'</td>
+            <td> image<span style="color: red;">&#9733;</span></td>
+            <td>The ID of the image asset to be used. </td>
+            <td>integer (Asset ID)'</td>
         </tr>
-        <tr>
-            <td> end date<span style="color: red;">&#9733;</span></td>
-            <td>The end date of the range</td>
-            <td>date in format 'Y-m-d'</td>
+         <tr>
+            <td> crop</td>
+            <td>Coordinates for a specific crop area. </td>
+            <td>object (containing top, left, width, height)</td>
         </tr>
         <tr>
             <td> Properties </td>
-            <td>A list of custom properties associated with the date range attribute. Each property contains metadata such as name,type and value. </td>
+            <td>A list of custom properties associated with the attribute. Each property contains metadata such as name,type and value. </td>
             <td>
                <table style="width: 100%; margin-top: 10px; border: 1px solid #ddd;">
                 <tr>
@@ -57,7 +57,7 @@ Required parameter <span style="color: red;">&#9733;</span>
 ----------
 #
 ## Output Parameters
-Parameters received in output while retrieving a data range attribute of an object. <br>
+Parameters received in output while retrieving a hotspot image attribute of an object. <br>
 
 Required parameter <span style="color: red;">&#9733;</span>
 <table style="width: 100%">
@@ -68,7 +68,7 @@ Required parameter <span style="color: red;">&#9733;</span>
         </tr>
         <tr>
             <td>name <span style="color: red;">&#9733;</span></td>
-            <td>Name of the attrbute</td>
+            <td>Name of the attribute</td>
             <td>string</td>
         </tr>
          <tr>
@@ -76,19 +76,14 @@ Required parameter <span style="color: red;">&#9733;</span>
             <td>Type of the attribute</td>
             <td>string</td>
         </tr>
-        <tr>
-            <td> start date<span style="color: red;">&#9733;</span></td>
-            <td>The start date of the range </td>
-            <td>date in format 'Y-m-d'</td>
-        </tr>
-        <tr>
-            <td> end date<span style="color: red;">&#9733;</span></td>
-            <td>The end date of the range</td>
-            <td>date in format 'Y-m-d'</td>
+         <tr>
+            <td> image<span style="color: red;">&#9733;</span></td>
+            <td>The ID of the referenced asset. </td>
+            <td>integer (Asset ID)'</td>
         </tr>
         <tr>
             <td> Properties </td>
-            <td>A list of custom properties associated with the date range attribute. Each property contains metadata such as name,type and value. </td>
+            <td>A list of custom properties associated with the attribute. Each property contains metadata such as name,type and value. </td>
             <td>
                <table style="width: 100%; margin-top: 10px; border: 1px solid #ddd;">
                 <tr>
