@@ -1,0 +1,35 @@
+name: Genera PDF dalla documentazione Markdown
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '**.md'
+
+jobs:
+  build-pdf:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Installa Pandoc e TeX Live
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc texlive texlive-xetex
+
+      - name: Unisci i file Markdown (opzionale: modifica per gestire l’ordine desiderato)
+        run: |
+          find . -name "*.md" | sort > md-files.txt
+          xargs cat < md-files.txt > unione.md
+
+      - name: Genera PDF con Pandoc
+        run: |
+          pandoc unione.md -o documentazione.pdf
+
+      - name: Carica PDF come artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: documentazione-pdf
+          path: documentazione.pdf
